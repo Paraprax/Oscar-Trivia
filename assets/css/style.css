@@ -2,10 +2,42 @@ body {
     background-image: url("../images/redcurtains.png");
 }
 
+.container {
+    color: white;
+}
+
+#gameName {
+    color: #d8a600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 64pt;   
+ 
+}
+
 .panel {
     align-content: center;
-    background-color: black;
-    color: gold;
+    background-color: #262626;
+    border: 2px;
+    border-color: #bc8700;
+    border-style: groove;
     margin: 5%;
     text-align: center;
 }
+
+.questionNumber {
+    color: #d8a600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.row {
+    margin-bottom: 5%;
+}
+
+.timerBox {
+    border-style: groove;
+}
+
+#timerText {
+    color: #bc8700;
+    font-family: cursive;
+}
+
