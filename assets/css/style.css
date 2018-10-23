@@ -1,0 +1,11 @@
+body {
+    background-image: url("../images/redcurtains.png");
+}
+
+.panel {
+    align-content: center;
+    background-color: black;
+    color: gold;
+    margin: 5%;
+    text-align: center;
+}
