@@ -4,30 +4,28 @@ $(document).ready(function(){
 
     console.log("Hello, Newman")
 
-    function getAnswer(){
-        // Get the selected score (assuming one was selected)
-        var answer = document.querySelector('input[name="scores"]:checked').value;
-        alert(score + ' was selected!');
-    }
-   
-    function buildQuiz(questions, quizContainer, resultsContainer, submitButton){
+    var questions = [
+        {
+            question: "Which was the first film to win Best Picture?",
+            answers: {
+                a: 'Wings',
+                b: 'Governess Of The Prairie',
+                c: 'Stop The Presses!'
+            },
+            rightAnswer: 'a'
+        },
+        {
+            question: "Who is the youngest actor to win an Oscar?",
+            answers: {
+                a: 'Shirley Temple',
+                b: 'Tatum ONeale',
+                c: 'Bud Buttons'
+            },
+            rightAnswer: 'b'
+        },
+    ];
 
-        function showQuestions(questions, quizContainer){
-            // code will go here
-        }
-    
-        function showResults(questions, quizContainer, resultsContainer){
-            // code will go here
-        }
-    
-        // show the questions
-        showQuestions(questions, quizContainer);
-    
-        // when user clicks submit, show results
-        $('#results').on("click", function() {
-            showResults(questions, quizContainer, resultsContainer);
-        });
-    }
+} // end of docready function
 
 
 
