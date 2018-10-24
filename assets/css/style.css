@@ -2,6 +2,10 @@ body {
     background-image: url("../images/redcurtains.png");
 }
 
+button {
+    font-family: cursive;
+}
+
 .container {
     color: white;
 }
@@ -16,7 +20,7 @@ body {
 .panel {
     align-content: center;
     background-color: #262626;
-    border: 2px;
+    border: 6px;
     border-color: #bc8700;
     border-style: groove;
     margin: 5%;
@@ -24,6 +28,11 @@ body {
 }
 
 .questionNumber {
+    color: #d8a600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.resultsAre {
     color: #d8a600;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
