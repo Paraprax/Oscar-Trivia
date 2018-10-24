@@ -6,6 +6,11 @@ button {
     font-family: cursive;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 .container {
     color: white;
 }
@@ -48,5 +53,6 @@ button {
 #timerText {
     color: #bc8700;
     font-family: cursive;
+    padding-top: 10px;
 }
 
