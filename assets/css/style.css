@@ -32,6 +32,11 @@ button {
     text-align: center;
 }
 
+.question {
+    color: white;
+    font-size: 24pt;
+}
+
 .questionNumber {
     color: #d8a600;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -54,5 +59,9 @@ button {
     color: #bc8700;
     font-family: cursive;
     padding-top: 10px;
+}
+
+#quiz {
+    color: white;
 }
 
