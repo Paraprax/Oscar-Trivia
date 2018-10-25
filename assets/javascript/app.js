@@ -23,7 +23,7 @@ $(document).ready(function(){
             question: "Who is the youngest actor ever to win an Oscar?", //two
             answers: {
                 a: 'Shirley Temple',
-                b: 'Tatum ONeale',
+                b: "Tatum O'Neale",
                 c: 'Bud Buttons',
                 d: 'Felix McGillicuty'
             },
@@ -218,12 +218,14 @@ $(document).ready(function(){
             showResults(questions, quizBox, resultsBox);
         }
 
-       // setTimeout(showResults(questions, quizBox, resultsBox), 10000); //can't figure out why this is running with no time-delay
+        setTimeout(function(){ showResults(questions, quizBox, resultsBox) }, 60000); //showResults is called to end the quiz after 60 seconds 
         
     } //end of triviaGame
 
     $("#start-button").on("click", function(){
-        triviaGame(myQuestions, quizBox, resultsBox, resultsButton); //parent function called at docready
+        triviaGame(myQuestions, quizBox, resultsBox, resultsButton); //parent function called on button-press
     });
+
+    
 
 }); // end of docready function
