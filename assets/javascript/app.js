@@ -1,5 +1,3 @@
-console.log("Hello, Newman")
-
 $(document).ready(function(){
 
     console.log("Hello, Newman")
@@ -10,7 +8,7 @@ $(document).ready(function(){
 
     var questionNumbers = ["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE"];
 
-    var myQuestions = [
+    var myQuestions = [ // array of all twelve questions, their answer-options and solutions
         {
             question: "Which was the first film to win Best Picture?", //one
             answers: {
@@ -42,7 +40,7 @@ $(document).ready(function(){
             rightAnswer: 'b'
         },
         {
-            question: "Who is the oldest actor ever to win an Oscar?",
+            question: "Who is the oldest actor ever to win an Oscar?", //four
             answers: {
                 a: 'Clint Eastwood',
                 b: 'Gloria Stuart',
@@ -52,7 +50,7 @@ $(document).ready(function(){
             rightAnswer: 'c'
         },
         {
-            question: "Who has hosted the Oscars more times than anybody else?",
+            question: "Who has hosted the Oscars more times than anybody else?", //five
             answers: {
                 a: 'Billy Crystal',
                 b: 'Johnny Carson',
@@ -62,7 +60,7 @@ $(document).ready(function(){
             rightAnswer: 'c'
         },
         {
-            question: "Who has the all-time record for most overall Oscars won?",
+            question: "Who has the all-time record for most overall Oscars won?", //six
             answers: {
                 a: 'Meryl Streep',
                 b: 'Steven Spielberg',
@@ -72,7 +70,7 @@ $(document).ready(function(){
             rightAnswer: 'd'
         },
         {
-            question: "What was the first film to win in all five 'major' categories(Best Screenplay, Actor, Actress, Director and Picture)?",
+            question: "What was the first film to win in all five 'major' categories(Best Screenplay, Actor, Actress, Director and Picture)?", //seven
             answers: {
                 a: "John Steinbeck’s “As Far as the Eye Can See”",
                 b: "The Forgotten Tuesday",
@@ -82,7 +80,7 @@ $(document).ready(function(){
             rightAnswer: 'c'
         },
         {
-            question: "What is the most recent film to accomplish the same feat?",
+            question: "What is the most recent film to accomplish the same feat?", //eight
             answers: {
                 a: "One Flew Over The Cuckoo's Nest",
                 b: "Gorillas In The Mist",
@@ -92,7 +90,7 @@ $(document).ready(function(){
             rightAnswer: 'c'
         },
         {
-            question: "Which was the first year the Oscars were broadcast on television?",
+            question: "Which was the first year the Oscars were broadcast on television?", //nine
             answers: {
                 a: '1953',
                 b: '1968',
@@ -102,7 +100,7 @@ $(document).ready(function(){
             rightAnswer: 'a'
         },
         {
-            question: "Who gave the shortest Oscar acceptance speech to date('Thank you.')?",
+            question: "Who gave the shortest Oscar acceptance speech to date('Thank you.')?", //ten
             answers: {
                 a: 'Clark Gable (1934)',
                 b: 'Patty Duke (1962)',
@@ -112,7 +110,7 @@ $(document).ready(function(){
             rightAnswer: 'b'
         },
         {
-            question: "Which year's Oscar broadcast had the highest ratings(55.25 million viewers)?",
+            question: "Which year's Oscar broadcast had the highest ratings(55.25 million viewers)?", //eleven
             answers: {
                 a: '1974',
                 b: '2005',
@@ -122,7 +120,7 @@ $(document).ready(function(){
             rightAnswer: 'd'
         },
         {
-            question: "Who was the first actor to be nominated for playing a non-human role?",
+            question: "Who was the first actor to be nominated for playing a non-human role?", //twelve
             answers: {
                 a: "Andy Serkis as Gollum in 'The Lord Of The Rings: The Two Towers'",
                 b: "Ray Bolger as the Cowardly Lion in 'The Wizard Of Oz'",
@@ -133,25 +131,25 @@ $(document).ready(function(){
         },
     ];
 
-    function triviaGame(questions, quizBox, resultsBox, resultsButton){
+    function triviaGame(questions, quizBox, resultsBox, resultsButton){ // overarching function that builds the game via child functions
 
 
-        function showQuestions(questions, quizBox){
+        function showQuestions(questions, quizBox){ // function that populates the quizBox with functional q&a's
 
             var output = [];
             var answers;
 
             
-            for (var i = 0; i < questions.length; i++) { // loop through each object in the var questions array
+            for (var i = 0; i < questions.length; i++) { // loops through each object in the var 'questions' array
 
                 
-                answers = []; // empty the list of answers
+                answers = []; // sets the answers var to an empty array
 
                 
                 for(letter in questions[i].answers){ // loop for each hard-coded answer per question...
 
                     
-                    answers.push // create a radio button and push it to the answers array
+                    answers.push // creates a radio button and pushes it to the answers array
                     (
                         '<label>'
                             + '<input type="radio" name="question'+i+'" value="'+letter+'">'
@@ -161,7 +159,7 @@ $(document).ready(function(){
                     );
                 }
                 
-                // add this question and its answers to the output
+                // bigger loop finishes by adding this question and its answers to the output
                 output.push
                 (
                     '<div class="question">' + '<div class="questionNumber"><h6>QUESTION ' + questionNumbers[i] + '</h6></div>' + questions[i].question + '</div>'
@@ -170,11 +168,11 @@ $(document).ready(function(){
 
             }
 
-            // finally combine our output list into one string of html and put it on the page
+            // add the output as HTML to the 'quiz' div targeted by the 'quizBox' var 
             quizBox.innerHTML = output.join('');
         } // end of showQuestions
 
-        function showResults(questions, quizBox, resultsBox){
+        function showResults(questions, quizBox, resultsBox){ // function that computes the score, styles the answers based on right/wrong, and displays the resulting score
 
             // gather answer containers from our quiz
             var answerContainers = quizBox.querySelectorAll('.answers');
@@ -207,22 +205,25 @@ $(document).ready(function(){
             }
 
             // show number of correct answers out of total
-	        resultsBox.innerHTML = numCorrect + ' out of ' + questions.length;
+            resultsBox.innerHTML = numCorrect + ' out of ' + questions.length;
+            
+            console.log("results");
         
         } //end of showResults function
 
 
         showQuestions(questions, quizBox); //function call	
-        
-        resultsButton.onclick = function(){
+
+        resultsButton.onclick = function(){ //showResults function called on button-click
             showResults(questions, quizBox, resultsBox);
         }
 
-
+       // setTimeout(showResults(questions, quizBox, resultsBox), 10000); //can't figure out why this is running with no time-delay
+        
     } //end of triviaGame
 
-    triviaGame(myQuestions, quizBox, resultsBox, resultsButton); //parent function call
-    
+    $("#start-button").on("click", function(){
+        triviaGame(myQuestions, quizBox, resultsBox, resultsButton); //parent function called at docready
+    });
 
- 
 }); // end of docready function
