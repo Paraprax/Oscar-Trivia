@@ -124,8 +124,8 @@ $(document).ready(function(){
             answers: {
                 a: "Andy Serkis as Gollum in 'The Lord Of The Rings: The Two Towers'",
                 b: "Ray Bolger as the Cowardly Lion in 'The Wizard Of Oz'",
-                c: "Jeff Bridges as Starman in 'Starman'",
-                d: "Doug Jones as the Amphibian in 'The Shape Of Water'"
+                c: "Jeff Bridges as the alien in 'Starman'",
+                d: "Doug Jones as the aquatic humanoid in 'The Shape Of Water'"
             },
             rightAnswer: 'c'
         },
