@@ -5,6 +5,7 @@ $(document).ready(function(){
     var quizBox = document.getElementById('quiz');
     var resultsBox = document.getElementById('results');
     var resultsButton = document.getElementById('submit');
+    var seconds = 120000;
 
     var questionNumbers = ["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE"];
 
@@ -221,7 +222,18 @@ $(document).ready(function(){
             showResults(questions, quizBox, resultsBox);
         }
 
-        setTimeout(function(){ showResults(questions, quizBox, resultsBox) }, 60000); //showResults is called to end the quiz after 60 seconds 
+        var time = setInterval(function() {
+            if (seconds > 0)
+            {
+                seconds -= 1000;
+                document.getElementById("clock").innerHTML = (seconds / 1000);
+            }
+            else 
+            {
+                showResults(questions, quizBox, resultsBox);  //showResults is called to end the quiz after 120 seconds 
+                clearInterval(time);
+            };
+        }, 1000);
         
     } //end of triviaGame
 
