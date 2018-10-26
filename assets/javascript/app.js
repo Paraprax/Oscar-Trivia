@@ -151,11 +151,14 @@ $(document).ready(function(){
                     
                     answers.push // creates a radio button and pushes it to the answers array
                     (
-                        '<label>'
-                            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                        
+                        '<div>'
+                        +'<input type="radio" name="question'+i+'" value="'+letter+'">'
+                        + '<label>' 
                             + letter + ': '
                             + questions[i].answers[letter]
                         + '</label>'
+                        +'</div>'
                     );
                 }
                 
