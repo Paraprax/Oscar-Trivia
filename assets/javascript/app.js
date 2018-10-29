@@ -11,7 +11,7 @@ $(document).ready(function(){
 
     var myQuestions = [ // array of all twelve questions, their answer-options and solutions
         {
-            question: "Which was the first film to win Best Picture?", //one
+            question: "Which was the first film ever to win Best Picture?", //one
             answers: {
                 a: 'Wings',
                 b: 'Governess Of The Prairie',
@@ -111,7 +111,7 @@ $(document).ready(function(){
             rightAnswer: 'b'
         },
         {
-            question: "Which year's Oscar broadcast had the highest ratings(55.25 million viewers)?", //eleven
+            question: "Which year's Oscar broadcast had the highest ratings ever(55.25 million viewers)?", //eleven
             answers: {
                 a: '1974',
                 b: '2005',
@@ -124,7 +124,7 @@ $(document).ready(function(){
             question: "Who was the first actor to be nominated for playing a non-human role?", //twelve
             answers: {
                 a: "Andy Serkis as Gollum in 'The Lord Of The Rings: The Two Towers'",
-                b: "Ray Bolger as the Cowardly Lion in 'The Wizard Of Oz'",
+                b: "Bert Lahr as the Cowardly Lion in 'The Wizard Of Oz'",
                 c: "Jeff Bridges as the alien in 'Starman'",
                 d: "Doug Jones as the aquatic humanoid in 'The Shape Of Water'"
             },
